@@ -1,25 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using MISA.API.Middlewares;
-using MISA.Core.Exceptions;
 using MISA.Core.Services;
 using MISA.Infrastructure.Repositories;
-using Newtonsoft.Json;
+using System;
+using System.IO;
+using System.Reflection;
 
 namespace MISA.API
 {
@@ -95,21 +85,23 @@ namespace MISA.API
 
             app.UseAuthorization();
 
-            app.UseExceptionHandler(c => c.Run(async context =>
-            {
-                var exception = context.Features
-                    .Get<IExceptionHandlerPathFeature>()
-                    .Error;
-                var result = JsonConvert.SerializeObject(new { error = exception.Message });
-                var code = 500;
-                if (exception is CustomerException)
-                {
-                    code = 400;
-                }
-                context.Response.StatusCode = code;
-                context.Response.ContentType = "application/json";
-                await context.Response.WriteAsync(result);
-            }));
+            app.UseMiddleware(typeof(ErrorHandingMiddleware));
+
+            //app.UseExceptionHandler(c => c.Run(async context =>
+            //{
+            //    var exception = context.Features
+            //        .Get<IExceptionHandlerPathFeature>()
+            //        .Error;
+            //    var result = JsonConvert.SerializeObject(new { error = exception.Message });
+            //    var code = 500;
+            //    if (exception is CustomerException)
+            //    {
+            //        code = 400;
+            //    }
+            //    context.Response.StatusCode = code;
+            //    context.Response.ContentType = "application/json";
+            //    await context.Response.WriteAsync(result);
+            //}));
 
             app.UseEndpoints(endpoints =>
             {

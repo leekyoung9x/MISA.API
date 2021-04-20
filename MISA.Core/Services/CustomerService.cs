@@ -1,9 +1,6 @@
 ﻿using MISA.Core.Entities;
 using MISA.Core.Exceptions;
 using MISA.Core.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MISA.Core.Services
@@ -14,12 +11,15 @@ namespace MISA.Core.Services
         {
         }
 
+        public override Task<int> AddAsync(Customer entity)
+        {
+            CustomerException.CustomerCodeRequired(entity.CustomerCode);
+            return base.AddAsync(entity);
+        }
+
         public override Task<int> UpdateAsync(Customer entity)
         {
-            if (string.IsNullOrEmpty(entity.CustomerCode))
-            {
-                throw new CustomerException("Mã nhân viên không thể để trống!");
-            }
+            CustomerException.CustomerCodeRequired(entity.CustomerCode);
             return base.UpdateAsync(entity);
         }
     }

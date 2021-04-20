@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Diagnostics;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using MISA.Core.Exceptions;
 using Newtonsoft.Json;
+using System;
+using System.Threading.Tasks;
 
 namespace MISA.API.Middlewares
 {
@@ -20,22 +17,27 @@ namespace MISA.API.Middlewares
             _next = next;
         }
 
-        public Task Invoke(HttpContext httpContext)
+        public async Task Invoke(HttpContext httpContext)
         {
-            return _next(httpContext);
+            try
+            {
+                await _next(httpContext);
+            }
+            catch (Exception ex)
+            {
+                await HandleExceptionAsync(httpContext, ex);
+            }
         }
 
-        private Task HandleExceptionAsync(HttpContext context, Exception ex)
+        private Task HandleExceptionAsync(HttpContext context, Exception exception)
         {
-            var exception = context.Features
-                    .Get<IExceptionHandlerPathFeature>()
-                    .Error;
-            var result = JsonConvert.SerializeObject(new { error = exception.Message });
             var code = 500;
             if (exception is CustomerException)
             {
                 code = 400;
             }
+            var result = JsonConvert.SerializeObject(new { error = exception.Message });
+
             context.Response.StatusCode = code;
             context.Response.ContentType = "application/json";
             return context.Response.WriteAsync(result);
