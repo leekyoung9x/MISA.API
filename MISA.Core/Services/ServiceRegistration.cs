@@ -8,6 +8,7 @@ namespace MISA.Core.Services
         public static void AddServiceInfrastructure(this IServiceCollection service)
         {
             service.AddTransient<ICustomerService, CustomerService>();
+            service.AddTransient<IUserService, UserService>();
         }
     }
 }

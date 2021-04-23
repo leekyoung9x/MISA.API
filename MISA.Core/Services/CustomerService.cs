@@ -7,14 +7,22 @@ namespace MISA.Core.Services
 {
     public class CustomerService : BaseService<Customer>, ICustomerService
     {
+        private ICustomerRepository _customerRepository;
+
         public CustomerService(ICustomerRepository customerRepository) : base(customerRepository)
         {
+            _customerRepository = customerRepository;
         }
 
-        public override Task<int> AddAsync(Customer entity)
+        public override async Task<int> AddAsync(Customer entity)
         {
+            var codeIsExist = await _customerRepository.CheckCustomerCodeExists(entity.CustomerCode);
+            if (codeIsExist)
+            {
+                throw new CustomerException("Mã nhân viên đã tồn tại");
+            }
             CustomerException.CustomerCodeRequired(entity.CustomerCode);
-            return base.AddAsync(entity);
+            return await base.AddAsync(entity);
         }
 
         public override Task<int> UpdateAsync(Customer entity)
