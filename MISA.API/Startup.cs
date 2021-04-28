@@ -141,7 +141,7 @@ namespace MISA.API
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseMiddleware(typeof(ErrorHandingMiddleware));
+            //app.UseMiddleware(typeof(ErrorHandingMiddleware));
 
             //app.UseExceptionHandler(c => c.Run(async context =>
             //{

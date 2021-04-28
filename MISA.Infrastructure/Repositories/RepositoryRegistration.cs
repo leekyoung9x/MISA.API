@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using MISA.Core.Interfaces;
+using MISA.Core.Interfaces.Repository;
 
 namespace MISA.Infrastructure.Repositories
 {
@@ -8,6 +9,7 @@ namespace MISA.Infrastructure.Repositories
         public static void AddRepositoryInfrastructure(this IServiceCollection service)
         {
             service.AddTransient<ICustomerRepository, CustomerRepository>();
+            service.AddTransient<ICustomerGroupRepository, CustomerGroupRepository>();
         }
     }
 }
