@@ -21,9 +21,9 @@ namespace MISA.API.Controllers
         }
 
         [HttpPost("authentication")]
-        public async Task<IActionResult> Authenticate([FromBody] UserLoginRequest request)
+        public IActionResult Authenticate([FromBody] UserLoginRequest request)
         {
-            var result = await _userService.Authentication(request);
+            var result = _userService.Authentication(request);
             if (result != null)
             {
                 return Ok(result);

@@ -20,7 +20,7 @@ namespace MISA.Core.Services
             _config = config;
         }
 
-        public async Task<string> Authentication(UserLoginRequest request)
+        public string Authentication(UserLoginRequest request)
         {
             //var user = await _userManager.FindByNameAsync(request.UserName);
             //if (user == null) return new ApiErrorResult<string>("Tài khoản không tồn tại");

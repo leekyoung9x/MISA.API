@@ -8,6 +8,6 @@ namespace MISA.Core.Interfaces
 {
     public interface IUserService
     {
-        public Task<string> Authentication(UserLoginRequest request);
+        public string Authentication(UserLoginRequest request);
     }
 }

@@ -25,7 +25,7 @@ namespace MISA.API.Controllers
         /// <response code="200">Trả về danh sách khách hàng</response>
         /// <response code="204">Nếu danh sách khách hàng trống</response>
         [HttpGet]
-        [Authorize]
+        //[Authorize]
         public async Task<IActionResult> GetAll()
         {
             var customers = await _customerService.GetAllAsync();

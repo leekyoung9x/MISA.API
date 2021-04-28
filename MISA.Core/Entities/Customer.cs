@@ -7,7 +7,7 @@ namespace MISA.Core.Entities
 {
     public class Customer : BaseEntity
     {
-        public Guid CustomerId { get; set; }
+        public Guid? CustomerId { get; set; }
 
         public string CustomerCode { get; set; }
 
