@@ -13,65 +13,82 @@ namespace MISA.Infrastructure.Repositories
     public class BaseRepository<T> : IGenericRepository<T>
     {
         protected readonly IConfiguration _configuration;
+        //protected readonly IDbConnection dbConnection;
 
-        protected readonly IDbConnection dbConnection;
+        protected readonly string connectionString;
         protected readonly string tableName;
 
         public BaseRepository(IConfiguration configuration)
         {
             _configuration = configuration;
-            dbConnection = new MySqlConnection(_configuration.GetConnectionString("CukCukConnection"));
+            //dbConnection = new MySqlConnection(_configuration.GetConnectionString("CukCukConnection"));
+            connectionString = _configuration.GetConnectionString("CukCukConnection");
             tableName = typeof(T).Name;
         }
 
         public async Task<int> AddAsync(T entity)
         {
-            var sql = $"Proc_Insert{tableName}";
-            var paramaters = MappingParams(entity);
-            var result = await dbConnection.ExecuteAsync(sql,
-                                              paramaters,
-                                              commandType: CommandType.StoredProcedure);
-            return result;
+            using (IDbConnection dbConnection = new MySqlConnection(connectionString))
+            {
+                var sql = $"Proc_Insert{tableName}";
+                var paramaters = MappingParams(entity);
+                var result = await dbConnection.ExecuteAsync(sql,
+                                                  paramaters,
+                                                  commandType: CommandType.StoredProcedure);
+                return result;
+            }
         }
 
         public async Task<int> DeleteAsync(string id)
         {
-            var sql = $"Proc_Delete{tableName}";
-            DynamicParameters paramaters = new DynamicParameters();
-            paramaters.Add($"{tableName}Id", id);
-            var result = await dbConnection.ExecuteAsync(sql,
-                                              paramaters,
-                                              commandType: CommandType.StoredProcedure);
-            return result;
+            using (IDbConnection dbConnection = new MySqlConnection(connectionString))
+            {
+                var sql = $"Proc_Delete{tableName}";
+                DynamicParameters paramaters = new DynamicParameters();
+                paramaters.Add($"{tableName}Id", id);
+                var result = await dbConnection.ExecuteAsync(sql,
+                                                  paramaters,
+                                                  commandType: CommandType.StoredProcedure);
+                return result;
+            }
         }
 
         public async Task<List<T>> GetAllAsync()
         {
-            var sql = $"Proc_Get{tableName}s";
-            var result = await dbConnection.QueryAsync<T>(sql,
-                                                         commandType: CommandType.StoredProcedure);
-            return result.ToList();
+            using (IDbConnection dbConnection = new MySqlConnection(connectionString))
+            {
+                var sql = $"Proc_Get{tableName}s";
+                var result = await dbConnection.QueryAsync<T>(sql,
+                                                             commandType: CommandType.StoredProcedure);
+                return result.ToList();
+            }
         }
 
         public async Task<T> GetByIdAsync(string id)
         {
-            var sql = $"Proc_Get{tableName}ById";
-            DynamicParameters paramaters = new DynamicParameters();
-            paramaters.Add($"{tableName}Id", id);
-            var result = await dbConnection.QueryFirstOrDefaultAsync<T>(sql,
-                                              paramaters,
-                                              commandType: CommandType.StoredProcedure);
-            return result;
+            using (IDbConnection dbConnection = new MySqlConnection(connectionString))
+            {
+                var sql = $"Proc_Get{tableName}ById";
+                DynamicParameters paramaters = new DynamicParameters();
+                paramaters.Add($"{tableName}Id", id);
+                var result = await dbConnection.QueryFirstOrDefaultAsync<T>(sql,
+                                                  paramaters,
+                                                  commandType: CommandType.StoredProcedure);
+                return result;
+            }
         }
 
         public async Task<int> UpdateAsync(T entity)
         {
-            var sql = $"Proc_Update{tableName}";
-            var paramaters = MappingParams(entity);
-            var result = await dbConnection.ExecuteAsync(sql,
-                                              paramaters,
-                                              commandType: CommandType.StoredProcedure);
-            return result;
+            using (IDbConnection dbConnection = new MySqlConnection(connectionString))
+            {
+                var sql = $"Proc_Update{tableName}";
+                var paramaters = MappingParams(entity);
+                var result = await dbConnection.ExecuteAsync(sql,
+                                                  paramaters,
+                                                  commandType: CommandType.StoredProcedure);
+                return result;
+            }
         }
 
         public DynamicParameters MappingParams(T entity)
@@ -101,13 +118,16 @@ namespace MISA.Infrastructure.Repositories
 
         public async Task<T> GetByCodeAsync(string code)
         {
-            var sql = $"Proc_Get{tableName}ByCode";
-            DynamicParameters paramaters = new DynamicParameters();
-            paramaters.Add($"{tableName}Code", code);
-            var result = await dbConnection.QueryFirstOrDefaultAsync<T>(sql,
-                                              paramaters,
-                                              commandType: CommandType.StoredProcedure);
-            return result;
+            using (IDbConnection dbConnection = new MySqlConnection(connectionString))
+            {
+                var sql = $"Proc_Get{tableName}ByCode";
+                DynamicParameters paramaters = new DynamicParameters();
+                paramaters.Add($"{tableName}Code", code);
+                var result = await dbConnection.QueryFirstOrDefaultAsync<T>(sql,
+                                                  paramaters,
+                                                  commandType: CommandType.StoredProcedure);
+                return result;
+            }
         }
     }
 }

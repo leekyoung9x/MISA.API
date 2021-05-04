@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace MISA.Core.AttributeCustom
+namespace MISA.Core.Exceptions
 {
     public class ValidateException : Exception
     {

@@ -1,7 +1,6 @@
 ﻿using MISA.Core.AttributeCustom;
 using MISA.Core.Enums;
 using System;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace MISA.Core.Entities

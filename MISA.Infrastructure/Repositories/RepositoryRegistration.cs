@@ -10,6 +10,7 @@ namespace MISA.Infrastructure.Repositories
         {
             service.AddTransient<ICustomerRepository, CustomerRepository>();
             service.AddTransient<ICustomerGroupRepository, CustomerGroupRepository>();
+            service.AddTransient(typeof(IGenericRepository<>), typeof(BaseRepository<>));
         }
     }
 }

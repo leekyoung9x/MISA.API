@@ -1,7 +1,5 @@
 ﻿using MISA.Core.AttributeCustom;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MISA.Core.Entities
 {
