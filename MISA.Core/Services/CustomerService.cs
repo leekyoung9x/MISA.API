@@ -14,21 +14,21 @@ namespace MISA.Core.Services
             _customerRepository = customerRepository;
         }
 
-        public override async Task<int> AddAsync(Customer entity)
-        {
-            var codeIsExist = await _customerRepository.CheckCustomerCodeExists(entity.CustomerCode);
-            if (codeIsExist)
-            {
-                throw new CustomerException("Mã nhân viên đã tồn tại");
-            }
-            CustomerException.CustomerCodeRequired(entity.CustomerCode);
-            return await base.AddAsync(entity);
-        }
+        //public override async Task<int> AddAsync(Customer entity)
+        //{
+        //    var codeIsExist = await _customerRepository.CheckCustomerCodeExists(entity.CustomerCode);
+        //    if (codeIsExist)
+        //    {
+        //        throw new CustomerException("Mã nhân viên đã tồn tại");
+        //    }
+        //    CustomerException.CustomerCodeRequired(entity.CustomerCode);
+        //    return await base.AddAsync(entity);
+        //}
 
-        public override Task<int> UpdateAsync(Customer entity)
-        {
-            CustomerException.CustomerCodeRequired(entity.CustomerCode);
-            return base.UpdateAsync(entity);
-        }
+        //public override Task<int> UpdateAsync(Customer entity)
+        //{
+        //    CustomerException.CustomerCodeRequired(entity.CustomerCode);
+        //    return base.UpdateAsync(entity);
+        //}
     }
 }

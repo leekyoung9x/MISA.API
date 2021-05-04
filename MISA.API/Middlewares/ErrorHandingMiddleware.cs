@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using MISA.Core.AttributeCustom;
 using MISA.Core.Exceptions;
 using Newtonsoft.Json;
 using System;
@@ -32,7 +33,7 @@ namespace MISA.API.Middlewares
         private Task HandleExceptionAsync(HttpContext context, Exception exception)
         {
             var code = 500;
-            if (exception is CustomerException)
+            if (exception is CustomerException || exception is ValidateException)
             {
                 code = 400;
             }

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>netcoreapp3.1</TargetFramework>
@@ -13,5 +13,29 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\SharedModel\SharedModel.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Properties\CustomerResource.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>CustomerResource.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Properties\ValidateResource.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>ValidateResource.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\CustomerResource.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>CustomerResource.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Properties\ValidateResource.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>ValidateResource.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
 	</ItemGroup>
 </Project>

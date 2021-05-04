@@ -8,7 +8,7 @@ namespace MISA.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BaseController<T> : ControllerBase
+    public class BaseController<T> : ControllerBase where T : class
     {
         private IGenericService<T> _baseService;
 
