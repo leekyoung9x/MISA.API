@@ -84,6 +84,15 @@
             CreatedDate: 5/4/2021
             CreateBy: THTùng
         </member>
+        <member name="M:MISA.Infrastructure.Repositories.BaseRepository`1.MappingParams(`0)">
+            <summary>
+            Hàm tạo tham số động từ class entity
+            </summary>
+            <param name="entity">Thông tin thực thể</param>
+            <returns>Tham số động</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
         <member name="M:MISA.Infrastructure.Repositories.BaseRepository`1.GetByCodeAsync(System.String)">
             <summary>
             Hàm lấy ra thực thể với mã truyền vào
@@ -92,6 +101,52 @@
             <returns>Trả về thông tin thực thể - entity - T</returns>
             CreatedDate: 5/4/2021
             CreateBy: THTùng
+        </member>
+        <member name="T:MISA.Infrastructure.Repositories.CustomerGroupRepository">
+            <summary>
+            Repository for class CustomerGroup
+            </summary>
+        </member>
+        <member name="M:MISA.Infrastructure.Repositories.CustomerGroupRepository.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Hàm khởi tạo
+            </summary>
+            <param name="configuration">Search gg để biết thêm chi tiết - key : IConfiguration .net core</param>
+        </member>
+        <member name="T:MISA.Infrastructure.Repositories.CustomerRepository">
+            <summary>
+            Repository for class Customer
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Infrastructure.Repositories.CustomerRepository.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Hàm khởi tạo
+            </summary>
+            <param name="configuration"></param>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Infrastructure.Repositories.CustomerRepository.CheckCustomerCodeExists(System.String)">
+            <summary>
+            Hàm kiểm tra mã khách hàng đã tồn tại trên db hay chưa
+            </summary>
+            <param name="code">Mã khách hàng</param>
+            <returns>True nếu đã tồn tại, false nếu chưa tồn tại</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="T:MISA.Infrastructure.Repositories.RepositoryRegistration">
+            <summary>
+            Class đăng ký DI cho Repository
+            </summary>
+        </member>
+        <member name="M:MISA.Infrastructure.Repositories.RepositoryRegistration.AddRepositoryInfrastructure(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Hàm đăng ký
+            </summary>
+            <param name="service"></param>
         </member>
     </members>
 </doc>

@@ -128,7 +128,7 @@ namespace MISA.Core.Services
                     // Lấy giá trị
                     var propertyValue = property.GetValue(entity);
                     // Kiểm tra giá trị
-                    if (string.IsNullOrEmpty(propertyValue.ToString()))
+                    if (propertyValue == null || string.IsNullOrEmpty(propertyValue.ToString()))
                     {
                         var msgError = (requiredValidate[0] as CRequired).Message;
                         if (string.IsNullOrEmpty(msgError))
