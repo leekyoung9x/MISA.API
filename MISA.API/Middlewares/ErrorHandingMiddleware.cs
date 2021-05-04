@@ -29,6 +29,12 @@ namespace MISA.API.Middlewares
             }
         }
 
+        /// <summary>
+        /// Hàm xử lí khi có exception
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
         private Task HandleExceptionAsync(HttpContext context, Exception exception)
         {
             var code = 500;

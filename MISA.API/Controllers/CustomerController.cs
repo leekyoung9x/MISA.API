@@ -6,12 +6,23 @@ using System.Threading.Tasks;
 
 namespace MISA.API.Controllers
 {
+    /// <summary>
+    /// Controller api for Customer
+    /// </summary>
+    /// CreatedDate: 5/4/2021
+    /// CreateBy: THTùng
     [Route("api/v1/[controller]s")]
     [ApiController]
     public class CustomerController : ControllerBase
     {
         private ICustomerService _customerService;
 
+        /// <summary>
+        /// Hàm khởi tạo
+        /// </summary>
+        /// <param name="customerService"></param>
+        /// CreatedDate: 5/4/2021
+        /// CreateBy: THTùng
         public CustomerController(ICustomerService customerService)
         {
             _customerService = customerService;

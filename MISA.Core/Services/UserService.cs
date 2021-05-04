@@ -9,15 +9,32 @@ using System.Text;
 
 namespace MISA.Core.Services
 {
+    /// <summary>
+    /// Class thể hiện các dịch vụ cho bảng User
+    /// </summary>
+    /// CreatedDate: 5/4/2021
+    /// CreateBy: THTùng
     public class UserService : IUserService
     {
         private readonly IConfiguration _config;
 
+        /// <summary>
+        /// Hàm khởi tạo
+        /// </summary>
+        /// <param name="config">Search GG để biết thêm về IConfiguration</param>
         public UserService(IConfiguration config)
         {
             _config = config;
         }
 
+        /// <summary>
+        /// Hàm đăng nhập
+        /// </summary>
+        /// <param name="request">Thông tin đăng nhập</param>
+        /// <returns>Chuỗi token nếu đăng nhập hợp lệ, ngược lại thì null</returns>
+        /// CreatedDate: 5/4/2021
+        /// CreateBy: THTùngCreatedDate: 5/4/2021
+        /// CreateBy: THTùng
         public string Authentication(UserLoginRequest request)
         {
             //var user = await _userManager.FindByNameAsync(request.UserName);

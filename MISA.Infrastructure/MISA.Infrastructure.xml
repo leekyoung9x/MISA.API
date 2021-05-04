@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MISA.Infrastructure</name>
+    </assembly>
+    <members>
+        <member name="T:MISA.Infrastructure.Repositories.BaseRepository`1">
+             <summary>
+             Repository với những hàm dùng chung
+             </summary>
+             <typeparam name="T"></typeparam>
+            
+        </member>
+        <member name="F:MISA.Infrastructure.Repositories.BaseRepository`1._configuration">
+            <summary>
+            Biến lấy chuỗi connectionString
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="F:MISA.Infrastructure.Repositories.BaseRepository`1.connectionString">
+            <summary>
+            Chuỗi kết nối đến csdl
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="F:MISA.Infrastructure.Repositories.BaseRepository`1.tableName">
+            <summary>
+            Tên bảng
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Infrastructure.Repositories.BaseRepository`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Hàm khởi tạo
+            </summary>
+            <param name="configuration">Search gg để biết thêm chi tiết - key : IConfiguration .net core</param>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Infrastructure.Repositories.BaseRepository`1.AddAsync(`0)">
+            <summary>
+            Hàm thêm một thực thể vào db
+            </summary>
+            <param name="entity">Thông tin thực thể muốn thêm</param>
+            <returns>Trả về 1 nều thêm thành công, 0 nếu thất bại</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Infrastructure.Repositories.BaseRepository`1.DeleteAsync(System.String)">
+            <summary>
+            Hàm xóa một thực thể trên db
+            </summary>
+            <param name="id">Mã định danh thực thể muốn xóa</param>
+            <returns>Trả về 1 nều thêm thành công, 0 nếu thất bại</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Infrastructure.Repositories.BaseRepository`1.GetAllAsync">
+            <summary>
+            Hàm lấy ra danh sách thực thể
+            </summary>
+            <returns>Trả về danh sách thực thể</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Infrastructure.Repositories.BaseRepository`1.GetByIdAsync(System.String)">
+            <summary>
+            Hàm lấy ra thực thể với id truyền vào
+            </summary>
+            <param name="id">Mã định danh thực thể</param>
+            <returns>Trả về thông tin thực thể - entity - T</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Infrastructure.Repositories.BaseRepository`1.UpdateAsync(`0)">
+            <summary>
+            Hàm sửa một thực thể trên db
+            </summary>
+            <param name="entity">Thông tin thực thể muốn sửa</param>
+            <returns>Trả về 1 nều thêm thành công, 0 nếu thất bại</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Infrastructure.Repositories.BaseRepository`1.GetByCodeAsync(System.String)">
+            <summary>
+            Hàm lấy ra thực thể với mã truyền vào
+            </summary>
+            <param name="code">Mã thực thể</param>
+            <returns>Trả về thông tin thực thể - entity - T</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+    </members>
+</doc>

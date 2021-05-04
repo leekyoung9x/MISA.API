@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace MISA.API.Controllers
 {
+    /// <summary>
+    /// Controller với các phương thức sử dụng chung
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// CreatedDate: 5/4/2021
+    /// CreateBy: THTùng
     [Route("api/[controller]")]
     [ApiController]
     public class BaseController<T> : ControllerBase where T : class
@@ -14,6 +20,12 @@ namespace MISA.API.Controllers
 
         private string tableName = typeof(T).Name;
 
+        /// <summary>
+        /// Phương thức khởi tạo
+        /// </summary>
+        /// <param name="baseService"></param>
+        /// CreatedDate: 5/4/2021
+        /// CreateBy: THTùng
         public BaseController(IGenericService<T> baseService)
         {
             _baseService = baseService;

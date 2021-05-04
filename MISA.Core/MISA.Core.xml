@@ -1,0 +1,671 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MISA.Core</name>
+    </assembly>
+    <members>
+        <member name="T:MISA.Core.AttributeCustom.CDisplayName">
+            <summary>
+            Attribute để lấy tên hiển thị
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="F:MISA.Core.AttributeCustom.CDisplayName.Name">
+            <summary>
+            Thuộc tính tên hiển thị
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.AttributeCustom.CDisplayName.#ctor(System.String)">
+            <summary>
+            Hàm khởi tạo
+            </summary>
+            <param name="name"></param>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="T:MISA.Core.AttributeCustom.CRequired">
+            <summary>
+            Attribute dùng để buộc trường không được để trống!
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="F:MISA.Core.AttributeCustom.CRequired.Message">
+            <summary>
+            Thuộc tính thông báo khi có lỗi
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.AttributeCustom.CRequired.#ctor(System.String)">
+            <summary>
+            Hàm khởi tạo
+            </summary>
+            <param name="message"></param>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="T:MISA.Core.AttributeCustom.CMaxLength">
+            <summary>
+            Attribute kiểm tra độ dài tối đa của trường
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="F:MISA.Core.AttributeCustom.CMaxLength.Message">
+            <summary>
+            Thuộc tính thông báo lỗi
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="F:MISA.Core.AttributeCustom.CMaxLength.MaxLength">
+            <summary>
+            Thuộc tính độ dài tối đa
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.AttributeCustom.CMaxLength.#ctor(System.String,System.Int32)">
+            <summary>
+            Hàm khởi tạo
+            </summary>
+            <param name="message"></param>
+            <param name="maxLength"></param>
+        </member>
+        <member name="T:MISA.Core.Entities.BaseEntity">
+            <summary>
+            Class với những thuộc tính bắt buộc dùng chung cho các entity
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="P:MISA.Core.Entities.BaseEntity.CreatedDate">
+            <summary>
+            Thuộc tính ngày tạo
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="P:MISA.Core.Entities.BaseEntity.CreatedBy">
+            <summary>
+            Thuộc tính người tạo
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="P:MISA.Core.Entities.BaseEntity.ModifiedDate">
+            <summary>
+            Thuộc tính ngày sửa
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="P:MISA.Core.Entities.BaseEntity.ModifiedBy">
+            <summary>
+            Thuộc tính người sửa
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="T:MISA.Core.Entities.Customer">
+            <summary>
+            Class thể hiện của bảng Customer trong db
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="P:MISA.Core.Entities.Customer.CustomerId">
+            <summary>
+            Thuộc tính mã định danh khách hàng
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="P:MISA.Core.Entities.Customer.CustomerCode">
+            <summary>
+            Thuộc tính mã khách hàng
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="P:MISA.Core.Entities.Customer.FullName">
+            <summary>
+            Thuộc tính tên khách hàng
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="P:MISA.Core.Entities.Customer.Gender">
+            <summary>
+            Thuộc tính giới tính khách hàng
+            </summary>
+        </member>
+        <member name="P:MISA.Core.Entities.Customer.MemberCardCode">
+            <summary>
+            Thuộc tính mã thẻ thành viên
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="P:MISA.Core.Entities.Customer.CustomerGroupId">
+            <summary>
+            Thuộc tính mã định danh nhóm khách hàng
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="P:MISA.Core.Entities.Customer.PhoneNumber">
+            <summary>
+            Thuộc tính số điện thoại khác hàng
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="P:MISA.Core.Entities.Customer.DateOfBirth">
+            <summary>
+            Thuộc tính ngày sinh khách hàng
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="P:MISA.Core.Entities.Customer.CompanyName">
+            <summary>
+            Thuộc tính tên công ty khách hàng
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="P:MISA.Core.Entities.Customer.CompanyTaxCode">
+            <summary>
+            Thuộc tính mã tax công ty
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="P:MISA.Core.Entities.Customer.Email">
+            <summary>
+            Thuộc tính email khách hàng
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="P:MISA.Core.Entities.Customer.Address">
+            <summary>
+            Thuộc tính địa chỉ khách hàng
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="P:MISA.Core.Entities.Customer.Note">
+            <summary>
+            Thuộc tính ghi chú
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="T:MISA.Core.Entities.CustomerGroup">
+            <summary>
+            Class thể hiện cho bảng CustomerGroup trong db
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="P:MISA.Core.Entities.CustomerGroup.CustomerGroupId">
+            <summary>
+            Thuộc tính định danh mã nhóm khách hàng
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="P:MISA.Core.Entities.CustomerGroup.CustomerGroupName">
+            <summary>
+            Thuộc tính tên nhóm khách hàng
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="P:MISA.Core.Entities.CustomerGroup.Description">
+            <summary>
+            Thuộc tính mô tả cho nhóm khách hàng
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="P:MISA.Core.Entities.CustomerGroup.ParentId">
+            <summary>
+            Cái này db có @@???
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="T:MISA.Core.Enums.Gender">
+            <summary>
+            Enum thể hiện cho thuộc tính giới tính
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="F:MISA.Core.Enums.Gender.Female">
+            <summary>
+            Giới tính nữ
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="F:MISA.Core.Enums.Gender.Male">
+            <summary>
+            Giới tính nam
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="F:MISA.Core.Enums.Gender.Unknow">
+            <summary>
+            Giới tính không xác định
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="T:MISA.Core.Exceptions.CustomerException">
+            <summary>
+            Exception thiết kế riêng cho class Customer
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.Exceptions.CustomerException.#ctor(System.String)">
+            <summary>
+            Hàm khởi tạo
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="T:MISA.Core.Exceptions.ValidateException">
+            <summary>
+            Exception bắt lỗi cho tất cả các loại kiểm tra dữ liệu
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.Exceptions.ValidateException.#ctor">
+            <summary>
+            Hàm khởi tạo không tham số
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.Exceptions.ValidateException.#ctor(System.String)">
+            <summary>
+            Hàm khởi tạo có tham số
+            </summary>
+            <param name="msg">Thông báo lỗi</param>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="T:MISA.Core.Interfaces.Repository.ICustomerGroupRepository">
+            <summary>
+            Interface thể hiện danh sách tác vụ cho class CustomerGroup
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="T:MISA.Core.Interfaces.ICustomerRepository">
+            <summary>
+            Interface thể hiện các tác vụ cho class Customer
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.Interfaces.ICustomerRepository.CheckCustomerCodeExists(System.String)">
+            <summary>
+            Hàm kiểm tra mã khách hàng đã tồn tại hay chưa
+            </summary>
+            <param name="code">CustomerCode - Mã khách hàng</param>
+            <returns>Nếu đã tồn tại trả về true ngược lại là false</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="T:MISA.Core.Interfaces.IGenericRepository`1">
+            <summary>
+            Interface dùng chung với các tác vụ chung cho các class entity
+            </summary>
+            <typeparam name="T">Class entity</typeparam>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.Interfaces.IGenericRepository`1.GetByIdAsync(System.String)">
+            <summary>
+            Hàm lấy ra thực thể với id truyền vào
+            </summary>
+            <param name="id">Mã định danh thực thể</param>
+            <returns>Trả về thông tin thực thể - entity - T</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.Interfaces.IGenericRepository`1.GetByCodeAsync(System.String)">
+            <summary>
+            Hàm lấy ra thực thể với mã truyền vào
+            </summary>
+            <param name="code">Mã thực thể</param>
+            <returns>Trả về thông tin thực thể - entity - T</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.Interfaces.IGenericRepository`1.GetAllAsync">
+            <summary>
+            Hàm lấy ra danh sách thực thể
+            </summary>
+            <returns>Trả về danh sách thực thể</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.Interfaces.IGenericRepository`1.AddAsync(`0)">
+            <summary>
+            Hàm thêm một thực thể vào db
+            </summary>
+            <param name="entity">Thông tin thực thể muốn thêm</param>
+            <returns>Trả về 1 nều thêm thành công, 0 nếu thất bại</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.Interfaces.IGenericRepository`1.UpdateAsync(`0)">
+            <summary>
+            Hàm sửa một thực thể trên db
+            </summary>
+            <param name="entity">Thông tin thực thể muốn sửa</param>
+            <returns>Trả về 1 nều thêm thành công, 0 nếu thất bại</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.Interfaces.IGenericRepository`1.DeleteAsync(System.String)">
+            <summary>
+            Hàm xóa một thực thể trên db
+            </summary>
+            <param name="id">Mã định danh thực thể muốn xóa</param>
+            <returns>Trả về 1 nều thêm thành công, 0 nếu thất bại</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="T:MISA.Core.Interfaces.Service.ICustomerGroupService">
+            <summary>
+            Interface thể hiện các dịch vụ cho CustomerGroup
+            </summary>
+        </member>
+        <member name="T:MISA.Core.Interfaces.ICustomerService">
+            <summary>
+            Interface thể hiện các dịch vụ cho class Customer
+            </summary>
+        </member>
+        <member name="T:MISA.Core.Interfaces.IGenericService`1">
+            <summary>
+            Interface định nghĩa các dịch vụ dùng chung cho các service interface khác
+            </summary>
+            <typeparam name="T">class entity</typeparam>
+        </member>
+        <member name="M:MISA.Core.Interfaces.IGenericService`1.GetByIdAsync(System.String)">
+            <summary>
+            Hàm lấy ra thực thể với id truyền vào
+            </summary>
+            <param name="id">Mã định danh thực thể</param>
+            <returns>Trả về thông tin thực thể - entity - T</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.Interfaces.IGenericService`1.GetByCodeAsync(System.String)">
+            <summary>
+            Hàm lấy ra thực thể với mã truyền vào
+            </summary>
+            <param name="code">Mã thực thể</param>
+            <returns>Trả về thông tin thực thể - entity - T</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.Interfaces.IGenericService`1.GetAllAsync">
+            <summary>
+            Hàm lấy ra danh sách thực thể
+            </summary>
+            <returns>Trả về danh sách thực thể</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.Interfaces.IGenericService`1.AddAsync(`0)">
+            <summary>
+            Hàm thêm một thực thể vào db
+            </summary>
+            <param name="entity">Thông tin thực thể muốn thêm</param>
+            <returns>Trả về 1 nều thêm thành công, 0 nếu thất bại</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.Interfaces.IGenericService`1.UpdateAsync(`0)">
+            <summary>
+            Hàm sửa một thực thể trên db
+            </summary>
+            <param name="entity">Thông tin thực thể muốn sửa</param>
+            <returns>Trả về 1 nều thêm thành công, 0 nếu thất bại</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.Interfaces.IGenericService`1.DeleteAsync(System.String)">
+            <summary>
+            Hàm xóa một thực thể trên db
+            </summary>
+            <param name="id">Mã định danh thực thể muốn xóa</param>
+            <returns>Trả về 1 nều thêm thành công, 0 nếu thất bại</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="T:MISA.Core.Interfaces.IUserService">
+            <summary>
+            Interface thể hiện các dịch vụ cho bảng tài khoản
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.Interfaces.IUserService.Authentication(SharedModel.Request.UserLoginRequest)">
+            <summary>
+            Hàm kiểm tra tài khoản có trong db hay không
+            </summary>
+            <param name="request">Thông tin tài khoản người dùng nhập vào</param>
+            <returns>Trả về token cho user đăng nhập</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="T:MISA.Core.Properties.CustomerResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MISA.Core.Properties.CustomerResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MISA.Core.Properties.CustomerResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:MISA.Core.Properties.ValidateResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MISA.Core.Properties.ValidateResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MISA.Core.Properties.ValidateResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:MISA.Core.Properties.ValidateResource.MAXLENGTH_MESSAGE">
+            <summary>
+              Looks up a localized string similar to {0} phải có tối đa {1} kí tự!.
+            </summary>
+        </member>
+        <member name="P:MISA.Core.Properties.ValidateResource.MINLENGTH_MESSAGE">
+            <summary>
+              Looks up a localized string similar to {0} phải có tối thiểu {1} kí tự!.
+            </summary>
+        </member>
+        <member name="P:MISA.Core.Properties.ValidateResource.REQUIRED_MESSAGE">
+            <summary>
+              Looks up a localized string similar to {0} không thể để trống!.
+            </summary>
+        </member>
+        <member name="T:MISA.Core.Services.BaseService`1">
+            <summary>
+            Class dùng chung với các tác vụ chung cho các class entity
+            </summary>
+            <typeparam name="T">Class entity</typeparam>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="F:MISA.Core.Services.BaseService`1._baseRepository">
+            <summary>
+            Interface dùng chung cho repository
+            </summary>
+        </member>
+        <member name="M:MISA.Core.Services.BaseService`1.#ctor(MISA.Core.Interfaces.IGenericRepository{`0})">
+            <summary>
+            Hàm khởi tạo
+            </summary>
+            <param name="baseRepository">Tham số là interface dùng chung cho repository</param>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.Services.BaseService`1.AddAsync(`0)">
+            <summary>
+            Hàm thêm một thực thể vào db
+            </summary>
+            <param name="entity">Thông tin thực thể muốn thêm</param>
+            <returns>Trả về 1 nều thêm thành công, 0 nếu thất bại</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.Services.BaseService`1.DeleteAsync(System.String)">
+            <summary>
+            Hàm xóa một thực thể trên db
+            </summary>
+            <param name="id">Mã định danh thực thể muốn xóa</param>
+            <returns>Trả về 1 nều thêm thành công, 0 nếu thất bại</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.Services.BaseService`1.GetAllAsync">
+            <summary>
+            Hàm lấy ra danh sách thực thể
+            </summary>
+            <returns>Trả về danh sách thực thể</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.Services.BaseService`1.GetByCodeAsync(System.String)">
+            <summary>
+            Hàm lấy ra thực thể với mã truyền vào
+            </summary>
+            <param name="code">Mã thực thể</param>
+            <returns>Trả về thông tin thực thể - entity - T</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.Services.BaseService`1.GetByIdAsync(System.String)">
+            <summary>
+            Hàm lấy ra thực thể với id truyền vào
+            </summary>
+            <param name="id">Mã định danh thực thể</param>
+            <returns>Trả về thông tin thực thể - entity - T</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.Services.BaseService`1.UpdateAsync(`0)">
+            <summary>
+            Hàm sửa một thực thể trên db
+            </summary>
+            <param name="entity">Thông tin thực thể muốn sửa</param>
+            <returns>Trả về 1 nều thêm thành công, 0 nếu thất bại</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.Services.BaseService`1.CustomValidate(`0)">
+            <summary>
+            Hàm kiểm tra cho coder override
+            </summary>
+            <param name="entity">Thông tin thực thể</param>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="T:MISA.Core.Services.CustomerGroupService">
+            <summary>
+            Class dịch vụ cho class CustomerGroup
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.Services.CustomerGroupService.#ctor(MISA.Core.Interfaces.Repository.ICustomerGroupRepository)">
+            <summary>
+            Hàm khởi tạo
+            </summary>
+            <param name="customerGroupRepository">Interface repository của class CustomerGroup</param>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="T:MISA.Core.Services.CustomerService">
+            <summary>
+            Class thể hiện các dịch vụ cho class Customer
+            </summary>
+        </member>
+        <member name="M:MISA.Core.Services.CustomerService.#ctor(MISA.Core.Interfaces.ICustomerRepository)">
+            <summary>
+            Hàm khởi tạo
+            </summary>
+            <param name="customerRepository">Interface repository cho class Customer</param>
+        </member>
+        <member name="T:MISA.Core.Services.ServiceRegistration">
+            <summary>
+            Class đăng kí DI cho các Service
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.Services.ServiceRegistration.AddServiceInfrastructure(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Hàm đăng ký
+            </summary>
+            <param name="service"></param>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="T:MISA.Core.Services.UserService">
+            <summary>
+            Class thể hiện các dịch vụ cho bảng User
+            </summary>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+        <member name="M:MISA.Core.Services.UserService.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Hàm khởi tạo
+            </summary>
+            <param name="config">Search GG để biết thêm về IConfiguration</param>
+        </member>
+        <member name="M:MISA.Core.Services.UserService.Authentication(SharedModel.Request.UserLoginRequest)">
+            <summary>
+            Hàm đăng nhập
+            </summary>
+            <param name="request">Thông tin đăng nhập</param>
+            <returns>Chuỗi token nếu đăng nhập hợp lệ, ngược lại thì null</returns>
+            CreatedDate: 5/4/2021
+            CreateBy: THTùngCreatedDate: 5/4/2021
+            CreateBy: THTùng
+        </member>
+    </members>
+</doc>
